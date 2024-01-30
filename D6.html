@@ -30,7 +30,9 @@
       .myHeading {
         color: #ff00d6;
       }
-      h1:hover{cursor: pointer;}
+      h1:hover {
+        cursor: pointer;
+      }
     </style>
   </head>
 
@@ -96,7 +98,7 @@
 
       const addClassToTitle = function () {
         let h1 = document.getElementsByTagName("h1")[0];
-        h1.innerText = "titolo modificato";
+        h1.innerText = "myHeading";
         console.log(h1);
       };
       addClassToTitle();
@@ -117,25 +119,31 @@
       */
 
       const changeUrls = function () {
-        let a = document.body.querySelectorAll("div a");
-        a.forEach((a) => (a.href = "https://www.google.com"));
+        let a = document.querySelectorAll("div a");
+        a.href = "https://www.google.com";
 
-        return console.log(a);
+        console.log(a);
       };
+      // const changeUrls = function () {
+      //   let a = document.body.querySelectorAll("div a");
+      //   a.forEach((a) => (a.href = "https://www.google.com"));
+
+      //   return console.log(a);
+      // };
       changeUrls();
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
     */
 
-      const addToTheSecond = function () {
+      const addToTheSecond = function (text) {
         const secondaList = document.querySelector("#secondList");
         let newLi = document.createElement("li");
-        newLi.innerText = "sono il nuovo li";
+        newLi.innerText = text;
         secondaList.appendChild(newLi);
         console.log(secondaList);
       };
-      addToTheSecond();
+      addToTheSecond("nuovo");
 
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
@@ -178,20 +186,18 @@
 
       const makeItClickable = function () {
         const h1 = document.querySelector("h1");
-       console.log(h1.innerText.length)
-     
-        h1.onclick=function(){
+        console.log(h1.innerText.length);
+
+        h1.onclick = function () {
           // if (h1.innerText.length>=0) {
           //   console.log("ok")
-            h1.innerHTML = h1.innerHTML.slice(0, -1);
+          h1.innerHTML = h1.innerHTML.slice(0, -1);
           // } else {
           //   alert("errore non ci sono lettere da rimuovere");
           // }
-        }
         };
+      };
 
-   
-    
       makeItClickable();
 
       /* ESERCIZIO 10
